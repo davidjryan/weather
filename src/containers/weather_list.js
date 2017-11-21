@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class WeatherList extends Component {
+class WeatherList extends Component {
   render() {
     return (
       <table className="table table-hover">
@@ -12,7 +12,15 @@ export default class WeatherList extends Component {
             <th>Humidity</th>
           </tr>
         </thead>
+        <tbody>
+        </tbody>
       </table>
     )
   }
 }
+
+function mapStateToProps({ weather }) {
+  return { weather }
+}
+
+export default connect(mapStateToProps)(WeatherList);
